@@ -9,16 +9,16 @@ format:
 build: 
 	# go mod init
 	go mod tidy
-	go build -o server ./server.go
-	go build -o client ./client.go
+	go build -o server ./server/server.go
+	go build -o client ./client/client.go
 
 runs: 
-	./server
+	./server/server
 
 runc:
-	./client
+	./client/client
 
 .PHONY: clean
 clean:
-	-rm -f ./server
-	-rm -f ./client
+	-rm -f ./server/server
+	-rm -f ./client/client
