@@ -14,7 +14,7 @@ func main() {
 func serve() {
 	lis, err := net.ListenUDP("udp", &net.UDPAddr{Port: 3333, IP: net.ParseIP("127.0.0.1")})
 	if err != nil {
-		log.Printf("listen err = %+v\n", err)
+		log.Printf("listen err: %+v\n", err)
 		return
 	}
 	defer lis.Close()
