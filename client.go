@@ -19,7 +19,7 @@ func run() {
 	defer so.Close()
 
 	udata := []byte("hello")
-	log.Println("send:", string(udata))
+	log.Printf("send:%+v", string(udata))
 	_, err = so.Write(udata)
 	if err != nil {
 		log.Println("send data fail, err:", err)
