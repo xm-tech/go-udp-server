@@ -10,8 +10,8 @@ func main() {
 }
 
 func run() {
-	raddr := net.UDPAddr{IP: net.IPv4(127, 0, 0, 1), Port: 3333}
-	so, err := net.DialUDP("udp", nil, &raddr)
+	raddr := &net.UDPAddr{Port: 3333, IP: net.ParseIP("127.0.0.1")}
+	so, err := net.DialUDP("udp", nil, raddr)
 	if err != nil {
 		log.Println("dialUDP err:", err)
 		return
